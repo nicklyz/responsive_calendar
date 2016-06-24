@@ -11,7 +11,10 @@ const updateMeta = (state, metaShouldUpdate) => {
 
 const concatEvents = (state, events) => {
   // Combine new events with original, remove duplicates:
-  const newEvents = _.uniqBy(state.events.concat(events), event => event.id);
+  const newEvents = _.uniqBy(state.events.concat(events), event => {
+    return { start: event.start, type: event.type };
+  });
+
   return { ...state, events: newEvents };
 };
 
