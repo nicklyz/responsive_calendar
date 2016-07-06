@@ -14,6 +14,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { fetchEventSources } from './actions/events_actions';
 import { Provider } from 'react-redux';
 
+import './bootstrap.css';
 import './app.css';
 
 const store = createStore(
